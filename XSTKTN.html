@@ -1,4 +1,3 @@
-<!-- Phiên bản kiểm tra  -->
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -39,7 +38,10 @@
     .action-buttons .btn { width: auto; flex: 1; padding: 10px; font-size: 14px; }
     
     .question { background: #fff; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px; margin-bottom: 15px; }
-    .question p { font-weight: bold; margin-top: 0; font-size: 1.05rem; }
+    .question p { font-weight: normal; margin-top: 0; font-size: 1.05rem; }
+    .question p strong { font-weight: bold; }
+    /* Nội dung câu hỏi/đáp án mặc định là chữ thường; chỉ thẻ <strong> mới in đậm. */
+    .question strong { font-weight: bold; }
     .question label { display: block; margin: 10px 0; cursor: pointer; font-weight: normal; padding: 8px; border-radius: 6px; transition: 0.2s; }
     .question label:hover { background: #f1f5f9; }
     
@@ -58,7 +60,7 @@
 <div id="timerDisplay">⏳ 00:00</div>
 <div class="container">
   <h1>Hệ Thống Trắc Nghiệm Trực Tuyến</h1>
-  <p class="author">TS. Khổng Văn Hải - Khoa Toán Tin, ĐHBK Hà Nội</p>
+  <!-- <p class="author">Khổng Văn Hải - Khoa Toán Tin, ĐHBK Hà Nội</p> -->
 
   <!-- MÀN HÌNH 1: ĐĂNG NHẬP -->
   <div id="loginScreen" style="max-width: 450px; margin: 0 auto;">
@@ -160,9 +162,9 @@
   const curriculum = {
     "1": [{ val: "1.0", text: "1.0 - LT sự kiện ngẫu nhiên" }, { val: "1.1", text: "1.1 - Bài tập cơ bản" }, { val: "1.3", text: "1.3 - BT CT cộng, xác suất điều kiện, CT nhân" }, { val: "1.4", text: "1.4 - BT Công thức xác suất toàn phần" }, { val: "1.5", text: "1.5 - BT Công thức Bayes" }],
     "2": [{ val: "2.0", text: "2.0 - LT Biến ngẫu nhiên và luật phân phối" }, { val: "2.1", text: "2.1 - BT Biến ngẫu nhiên rời rạc" }, { val: "2.2", text: "2.2 - BT Biến ngẫu nhiên liên tục" }],
-    "3": [{ val: "3.0", text: "3.0 - LT Biến ngẫu nhiên nhiều chiều" }, { val: "3.1", text: "3.1 - BT Biến ngẫu nhiên nhiều chiều" }],
-    "4": [{ val: "4.0", text: "4.0 - LT Ước lượng tham số" }],
-    "5": [{ val: "5.0", text: "5.0 - LT Kiểm định giả thuyết thống kê" }]
+    "3": [{ val: "3.0", text: "3.0 - LT Biến ngẫu nhiên nhiều chiều" }, { val: "3.1", text: "3.1 - BT Biến ngẫu nhiên nhiều chiều rời rạc" }, { val: "3.2", text: "3.2 - BT Biến ngẫu nhiên nhiều chiều liên tục" }],
+    "4": [{ val: "4.0", text: "4.0 - LT Ước lượng tham số" }, { val: "4.1", text: "4.1 - BT Ước lượng tham số cho kỳ vọng, phương sai đã biết" }, { val: "4.2", text: "4.2 - BT Ước lượng tham số cho kỳ vọng, phương sai chưa biết" }, { val: "4.3", text: "4.3 - BT Ước lượng tham số cho kỳ vọng, mẫu lớn" },, { val: "4.4", text: "4.4 - BT Ước lượng tham số cho tỷ lệ" }],
+    "5": [{ val: "5.0", text: "5.0 - LT Kiểm định giả thuyết thống kê" }, { val: "5.1", text: "5.1 - BT Kiểm định một mẫu thử" }, { val: "5.2", text: "5.2 - BT Kiểm định hai mẫu thử" }]
   };
 
   function updateSections() {
